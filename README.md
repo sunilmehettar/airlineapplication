@@ -1,12 +1,13 @@
-qantas - airlineapplication
+# qantas
+airlineapplication
 
-#Requirements
+# Requirements
 For building and running the application you need:
 
-springframework.boot 2.7.0
-Java SE-17
-Gradle 7.4.1
-Junit4
+1. cspringframework.boot 2.7.0
+2. Java SE-17
+3. Gradle 7.4.1
+4. Junit4
 
 # Running the application locally
 #Steps
@@ -24,5 +25,5 @@ Junit4
 11. access api in api testing tools like postman http://localhost:8081/api/v1/flights will return all flight records which are arriving today
 12. we can apply filter by airline code like  http://localhost:8081/api/v1/flights?search=AA will return all flight records which are arriving today and airline code is AA.
 
-#authentication
+# authentication
  authentication is not implemented but we can use token based authentication(JWT token), basic auth, API key or Spring Security framework etc.   
