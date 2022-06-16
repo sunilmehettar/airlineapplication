@@ -28,11 +28,17 @@ public class FlightDaoImpl implements FlightDao{
 	private FlightRepository repository;
 
 	@Override
-	public List<FlightScheduleModel> getAllTodaysFlights()throws NoDataException {
+	public List<FlightScheduleModel> getAllTodaysFlights(String filter) throws NoDataException {
 
 		Date start = DateUtil.atStartOfDay(new Date());
 		Date end = DateUtil.atEndOfDay(new Date());
-		List<FlightScheduleModel> resp =  repository.findAllByArrivalTimeBetween(start,end);
+		List<FlightScheduleModel> resp;
+		if(filter.equals("ALL"))
+			resp =  repository.findAllByArrivalTimeBetween(start,end);
+		else
+		{
+			resp =  repository.findAllByAirlineModelCodeIgnoreCaseAndArrivalTimeBetween(filter,start,end);
+		}
 		if(resp.isEmpty())
 			throw new NoDataException();
 		return resp;

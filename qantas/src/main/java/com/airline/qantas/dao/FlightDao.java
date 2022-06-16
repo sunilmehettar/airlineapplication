@@ -15,6 +15,6 @@ import com.airline.qantas.model.FlightScheduleModel;
 
 public interface FlightDao {
 
-	List<FlightScheduleModel> getAllTodaysFlights()throws NoDataException;
+	List<FlightScheduleModel> getAllTodaysFlights(String filters) throws NoDataException;
 
 }

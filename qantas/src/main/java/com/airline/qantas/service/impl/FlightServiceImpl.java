@@ -28,8 +28,8 @@ public class FlightServiceImpl implements FlightService {
 	FlightDao flightDao;
 	
 	@Override
-	public ResponseDto getAllTodaysFlights()throws NoDataException  {
-		List<FlightScheduleModel> list =  flightDao.getAllTodaysFlights();
+	public ResponseDto getAllTodaysFlights(String filter) throws NoDataException  {
+		List<FlightScheduleModel> list =  flightDao.getAllTodaysFlights(filter);
 		FlightTranslator translator=new FlightTranslator();
 		ResponseDto response= translator.modelToResponseDto(list);
 		return response;

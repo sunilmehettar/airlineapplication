@@ -18,7 +18,10 @@ import org.springframework.data.repository.CrudRepository;
 import com.airline.qantas.model.FlightScheduleModel;
 
 public interface FlightRepository extends CrudRepository<FlightScheduleModel, UUID> {
+
 	
 	List<FlightScheduleModel> findAllByArrivalTimeBetween(Date start, Date end);
 	
+	List<FlightScheduleModel> findAllByAirlineModelCodeIgnoreCaseAndArrivalTimeBetween( String filter, Date start, Date end);
+
 }

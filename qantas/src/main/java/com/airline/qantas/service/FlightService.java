@@ -14,6 +14,6 @@ import com.airline.qantas.exception.NoDataException;
 
 public interface FlightService {
 
-	ResponseDto getAllTodaysFlights()throws NoDataException;
+	ResponseDto getAllTodaysFlights(String filter) throws NoDataException;
 
 }
