@@ -25,7 +25,8 @@ import com.airline.qantas.service.FlightService;
 @RequestMapping("/v1")
 public class FlightController {
 
-	@Autowired FlightService flightService;
+	@Autowired 
+	FlightService flightService;
 	
 	@GetMapping("/flights")
 	@ResponseStatus(HttpStatus.OK)

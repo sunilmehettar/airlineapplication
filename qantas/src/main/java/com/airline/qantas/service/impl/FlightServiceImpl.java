@@ -29,9 +29,9 @@ public class FlightServiceImpl implements FlightService {
 	
 	@Override
 	public ResponseDto getAllTodaysFlights(String filter) throws NoDataException  {
-		List<FlightScheduleModel> list =  flightDao.getAllTodaysFlights(filter);
+		List<FlightScheduleModel> flightModelList =  flightDao.getAllTodaysFlights(filter);
 		FlightTranslator translator=new FlightTranslator();
-		ResponseDto response= translator.modelToResponseDto(list);
+		ResponseDto response= translator.modelToResponseDto(flightModelList);
 		return response;
 	}
 
