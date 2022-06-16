@@ -10,10 +10,11 @@ package com.airline.qantas.dao;
 
 import java.util.List;
 
+import com.airline.qantas.exception.NoDataException;
 import com.airline.qantas.model.FlightScheduleModel;
 
 public interface FlightDao {
 
-	List<FlightScheduleModel> getAllTodaysFlights();
+	List<FlightScheduleModel> getAllTodaysFlights()throws NoDataException;
 
 }

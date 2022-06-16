@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.airline.qantas.dto.ResponseDto;
+import com.airline.qantas.exception.NoDataException;
 import com.airline.qantas.service.FlightService;
 
 
@@ -27,7 +28,7 @@ public class FlightController {
 	
 	@GetMapping("/flights")
 	@ResponseStatus(HttpStatus.OK)
-	public ResponseEntity<Object> getFlights(){	
+	public ResponseEntity<Object> getFlights()throws NoDataException{	
 
 		ResponseDto response = flightService.getAllTodaysFlights();
 		return new ResponseEntity<>(response, HttpStatus.OK);

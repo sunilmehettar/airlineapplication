@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import com.airline.qantas.dao.FlightDao;
 import com.airline.qantas.dto.ResponseDto;
+import com.airline.qantas.exception.NoDataException;
 import com.airline.qantas.model.FlightScheduleModel;
 import com.airline.qantas.service.FlightService;
 import com.airline.qantas.translator.FlightTranslator;
@@ -27,7 +28,7 @@ public class FlightServiceImpl implements FlightService {
 	FlightDao flightDao;
 	
 	@Override
-	public ResponseDto getAllTodaysFlights()  {
+	public ResponseDto getAllTodaysFlights()throws NoDataException  {
 		List<FlightScheduleModel> list =  flightDao.getAllTodaysFlights();
 		FlightTranslator translator=new FlightTranslator();
 		ResponseDto response= translator.modelToResponseDto(list);

@@ -10,9 +10,10 @@
 package com.airline.qantas.service;
 
 import com.airline.qantas.dto.ResponseDto;
+import com.airline.qantas.exception.NoDataException;
 
 public interface FlightService {
 
-	ResponseDto getAllTodaysFlights();
+	ResponseDto getAllTodaysFlights()throws NoDataException;
 
 }
